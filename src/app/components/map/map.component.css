@@ -1,0 +1,14 @@
+.leaflet-control-attribution{
+    display: none;
+  }
+
+  #select {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #select #city {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+  }

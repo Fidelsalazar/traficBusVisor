@@ -1,0 +1,19 @@
+<nav id="my-first">
+  <ul>
+    <li class="logotype">
+      <a href="/home">
+        <img src="assets/images/icon.jpg" id="icon" />
+      </a>
+    </li>
+    <li class="burger" (click)="toggleMenu()">
+      <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
+    </li>
+    <li class="menu" [class.is-open]="isMenuOpen">
+      <a href="/home" class="menu-item">Home</a>
+      <a href="/mapmod" class="menu-item">Crear Rutas</a>
+      <a href="/modroutes" class="menu-item">Modificar rutas</a>
+      <a href="/mapfuncsview" class="menu-item">Trafico</a>
+      <a href="login" class="menu-item">Salir</a>
+    </li>
+  </ul>
+</nav>
