@@ -1,0 +1,35 @@
+<app-navbar/>
+<div class="container-home">
+  <div class="row">
+    <div class="col">
+      <div class="form-group" id="search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscar ..."
+          [(ngModel)]="filterRoutes"
+          name="filterRoutes"
+        >
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <th>Nombre</th>
+        <th>Desde</th>
+        <th>Hasta</th>
+        <th>Omnibus</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of routes | filter:filterRoutes">
+          <td>{{route.name}}</td>
+          <td>{{route.fromm}}</td>
+          <td>{{route.too}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

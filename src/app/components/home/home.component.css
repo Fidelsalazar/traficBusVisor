@@ -1,0 +1,12 @@
+.container-home {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  right: 50px;
+}
+
+#search{
+
+  margin: 20px;
+  width: 400px;
+}
