@@ -10,3 +10,27 @@
   margin: 20px;
   width: 400px;
 }
+
+/* Estilos base del botón */
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+/* Estilo cuando se pasa el cursor por encima del botón */
+.delete-button:hover {
+  transform: scale(1.1); /* Escala al 110% */
+}
+
+/* Elimina el borde alrededor del botón */
+.delete-button:focus {
+  outline: none;
+}
+
+/* Cambia el cursor a una manita */
+.delete-button:hover {
+  cursor: pointer;
+}
+

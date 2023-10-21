@@ -12,12 +12,14 @@ import { ResponseInterfaceRoutes } from '../models/response/responseRoutes.inter
 import { sendPointsI } from '../models/send/send-points.interface';
 import { ResponseStatusI } from '../models/response/responseStatus.interface';
 import { CrudFormI } from '../models/send/crudForm.interface';
+import { ResponseDeleteRoute } from '../models/response/responseDeleteRoute.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ApiService{
+  
 
   private url = "http://127.0.0.1:5000";//"https://srv76158-15190.vps.etecsa.cu";
   private _refresh$ = new Subject<void>();
@@ -53,8 +55,17 @@ export class ApiService{
   }
 
   getPointsRoute(form:ModFormI):Observable<ResponseInterfacePoints>{
-    let direccion = this.url + "api/routes/get";
+    let direccion = this.url + "/api/routes/get";
     return this.http.post<ResponseInterfacePoints>(direccion, form);
+  }
+
+  sendDeleteName(name :string):Observable<ResponseDeleteRoute>{
+    let direccion = this.url + "/api/busline/delete";
+
+    const sendName = {
+      'name' : name
+    }
+    return this.http.post<ResponseDeleteRoute>(direccion, sendName)
   }
 
 
