@@ -83,12 +83,12 @@ class PointsModel():
       connection  = get_connection()
 
       with connection.cursor() as cursor:
-        cursor.execute("""DELETE FROM points WHERE busline = %s """, (buslineId.id,))
+        cursor.execute("""DELETE FROM points WHERE busline = %s """, (buslineId,))
         affected_row = cursor.rowcount
         connection.commit()
       connection.close()
 
-      return affected_row
+      return affected_row, 
     except Exception as ex:
         return jsonify({'message': str(ex)}), 500
 
