@@ -44,7 +44,7 @@ export class ModfuncsrouteComponent implements OnInit{
   errorStatus:boolean = false;
   errorMsj:any = "";
 
-  crudForm = new FormGroup({
+  crudForm= new FormGroup({
     search: new FormControl('', Validators.required),
   })
 
@@ -216,8 +216,8 @@ export class ModfuncsrouteComponent implements OnInit{
     this.dialogService.openDialogWithTemplateMod({
       template
     })
-    //.afterClosed()
-    //.subscribe( (res) => console.log('Dialog Custom CLose',res));
+    .afterClosed()
+    .subscribe( (res) => console.log('Dialog Custom Close',res));
   }
 
   openModal() {

@@ -27,6 +27,7 @@ import { CheckmodalComponent } from './components/assets/checkmodal/checkmodal.c
 import { ErrormodalComponent } from './components/assets/errormodal/errormodal.component';
 import { ModfuncsrouteComponent } from './components/modfuncsroute/modfuncsroute.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

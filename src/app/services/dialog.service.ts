@@ -19,4 +19,8 @@ export class DialogService {
   openDialogWithTemplateMod(data : DialogWithTemplate){
     return this.matDialog.open(DialogWithTemplateComponent, { data })
   }
+
+  openDialogWithTemplateConf(data : DialogWithTemplate){
+    return this.matDialog.open(DialogWithTemplateComponent)
+  }
 }
