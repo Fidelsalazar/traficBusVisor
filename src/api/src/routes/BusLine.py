@@ -3,6 +3,7 @@ import uuid
 #Entities
 from models.entities.BusLine import BusLine
 from models.entities.BusLine import BusLineDelete
+from models.entities.BusLine import BusLineId
 #Models
 from models.BusLineModel import BusLineModel
 from models.PointsModel import PointsModel
@@ -59,16 +60,22 @@ def delete_busline():
 
     affected_rows = BusLineModel.get_buslineId(busline)
     print(affected_rows)
+  
 
     if affected_rows != None:
-      affected_rows_stops = StopsModel.delete_buslineId(affected_rows)
-      affected_rows_points = PointsModel.delete_buslineId(affected_rows)
+      affected = str(affected_rows[0])
+      id_delete = affected.replace("'", "").replace("'","")
+      print(id_delete)
+
+      affected_rows_stops = StopsModel.delete_buslineId(id_delete)
+      affected_rows_points = str(PointsModel.delete_buslineId(id_delete)[0]).replace("'", "").replace("'","")
       print('Points',affected_rows_points)
       print('Stops',affected_rows_stops)
 
       if  affected_rows_stops != -1 and affected_rows_points != -1:
-        affected_rows_busline = BusLineModel.delete_buslineId(affected_rows)
-        if affected_rows_points != 0 and affected_rows_stops >= 0 :
+        affected_rows_busline = BusLineModel.delete_buslineId(id_delete)
+        print (affected_rows_busline) 
+        if affected_rows_busline != 0  or affected_rows_busline > 0 :
             return jsonify({
               'status':'ok'
             })

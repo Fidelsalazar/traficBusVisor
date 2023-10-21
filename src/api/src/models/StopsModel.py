@@ -34,7 +34,7 @@ class StopsModel():
       connection  = get_connection()
 
       with connection.cursor() as cursor:
-        cursor.execute("""DELETE FROM stops WHERE busline = %s """, (buslineId.id,))
+        cursor.execute("""DELETE FROM stops WHERE busline = %s """, (buslineId,))
         affected_row = cursor.rowcount
         connection.commit()
       connection.close()
