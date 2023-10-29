@@ -21,7 +21,7 @@ import { ResponseDeleteRoute } from '../models/response/responseDeleteRoute.inte
 export class ApiService{
   
 
-  private url = "http://127.0.0.1:5000";//"https://srv76158-15190.vps.etecsa.cu";
+  private url = "http://190.15.158.76:7000";//"https://srv76158-15190.vps.etecsa.cu";
   private _refresh$ = new Subject<void>();
 
   constructor(public http:HttpClient){}
